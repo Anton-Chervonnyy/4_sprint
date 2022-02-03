@@ -1,3 +1,5 @@
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +16,7 @@ public class AccountTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters (name = "Test if {0} returns {1}")
     public static Object[][] testData(){
         return new Object[][] {
                 { null, false },
@@ -32,6 +34,8 @@ public class AccountTest {
     }
 
     @Test
+    @DisplayName("Validation test")
+    @Description("Validate if the input returns correct output")
     public void cardNameTest(){
 
         Account account = new Account(name);

@@ -1,3 +1,5 @@
+import io.qameta.allure.Step;
+
 public class Account {
 
     private final String name;
@@ -6,6 +8,7 @@ public class Account {
         this.name = name;
     }
 
+    @Step ("Run the validator")
     public boolean checkNameToEmboss() throws NullPointerException{
 
         try {
